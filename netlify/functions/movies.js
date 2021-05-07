@@ -55,7 +55,7 @@ exports.handler = async function(event) {
       }
   
   // Check if it meets the criteria input by the user and also ask it to ignore any //N runtime and genres
-      if(movieResults.genres == genre && movieResults.startYear == year && movieResults.runtimeMinutes !== `\\N` && movieResults.genres !== `\\N`){
+      if(movieResults.genres.includes(genre) && movieResults.startYear == year && movieResults.runtimeMinutes !== `\\N` && movieResults.genres !== `\\N`){
       
   // Add the results to the array    
       returnValue.movies.push(moviePost)
